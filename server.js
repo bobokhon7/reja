@@ -12,11 +12,16 @@ app.use(express.urlencoded({ extended: true }));
 
 //3 views code
 app.set("views", "views");
-app.set("veiws engine", "ejs");
+app.set("view engine", "ejs");
 
 //4 Routing code
+app.post("/create-item", (req, res) => {
+  console.log(req.body);
+  res.json({ test: "success" });
+});
+
 app.get("/", function (req, res) {
-  res.end("hello world Bobokhon");
+  res.render("harid");
 });
 
 const server = http.createServer(app);
