@@ -1,21 +1,39 @@
+// B-TASK:
+
+// Shunday function tuzing, u 1ta string parametrga ega bolsin,
+// hamda osha stringda qatnashgan raqamlarni sonini bizga return qilsin.
+// MASALAN countDigits("ad2a54y79wet0sfgb9") 7ni return qiladi.
+
+const countDigits = (data) => {
+  let arr = [];
+  let changeArr = data.split("");
+  for (i = 0; i < changeArr.length; i++) {
+    if (!isNaN(changeArr[i])) {
+      arr.push(changeArr[i]);
+    }
+  }
+
+  return arr.length;
+};
+console.log(countDigits("ad2a54y79wet0sfgb9"));
 // A-TASK:
 // Shunday 2 parametrli function tuzing,
 // hamda birinchi parametrdagi letterni ikkinchi
 // parametrdagi sozdan qatnashga sonini return qilishi kerak boladi.
 // MASALAN countLetter("e", "engineer") 3ni return
 
-function letterCount(a, b) {
-  let arr = [];
-  let changeArr = b.split("");
-  for (i = 0; i < changeArr.length; i++) {
-    if (a == changeArr[i]) {
-      arr.push(changeArr[i]);
-    }
-  }
-  return arr.length > 0 ? arr.length : `there is no  letter ${a} in ${b} word`;
-}
+// function letterCount(a, b) {
+//   let arr = [];
+//   let changeArr = b.split("");
+//   for (i = 0; i < changeArr.length; i++) {
+//     if (a == changeArr[i]) {
+//       arr.push(changeArr[i]);
+//     }
+//   }
+//   return arr.length > 0 ? arr.length : `there is no  letter ${a} in ${b} word`;
+// }
 
-console.log(letterCount("e", "engineer"));
+// console.log(letterCount("e", "engineer"));
 // console.log(letterCount("b", "letsgoo"));
 
 ////// async function
@@ -77,35 +95,35 @@ console.log(letterCount("e", "engineer"));
 
 // console.log("Jackma Advice");
 
-const list = [
-  "be Good student",
-  "follow your boss and make mistakes",
-  "do own jobs and run it",
-  "do what your are good at",
-  "make investment ot young generation",
-  "take a rest, but no need in age",
-];
+// const list = [
+//   "be Good student",
+//   "follow your boss and make mistakes",
+//   "do own jobs and run it",
+//   "do what your are good at",
+//   "make investment ot young generation",
+//   "take a rest, but no need in age",
+// ];
 
-function giveAdvice(a, callback) {
-  if (typeof a !== "number") callback("insert Number", null);
-  else if (a <= 20) callback(null, list[0]);
-  else if (a > 20 && a <= 30) callback(null, list[1]);
-  else if (a > 30 && a <= 40) callback(null, list[2]);
-  else if (a > 40 && a <= 50) callback(null, list[3]);
-  else if (a > 50 && a <= 60) callback(null, list[4]);
-  else {
-    setTimeout(function () {
-      callback(null, list[5]);
-    }, 5000);
-  }
-}
+// function giveAdvice(a, callback) {
+//   if (typeof a !== "number") callback("insert Number", null);
+//   else if (a <= 20) callback(null, list[0]);
+//   else if (a > 20 && a <= 30) callback(null, list[1]);
+//   else if (a > 30 && a <= 40) callback(null, list[2]);
+//   else if (a > 40 && a <= 50) callback(null, list[3]);
+//   else if (a > 50 && a <= 60) callback(null, list[4]);
+//   else {
+//     setTimeout(function () {
+//       callback(null, list[5]);
+//     }, 5000);
+//   }
+// }
 
-console.log("passed 0");
-giveAdvice(70, (err, data) => {
-  if (err) console.log("ERROR:", err);
-  else {
-    console.log("Answer:", data);
-  }
-});
+// console.log("passed 0");
+// giveAdvice(70, (err, data) => {
+//   if (err) console.log("ERROR:", err);
+//   else {
+//     console.log("Answer:", data);
+//   }
+// });
 
-console.log("passed 1");
+// console.log("passed 1");
