@@ -1,34 +1,30 @@
-console.log("web server started");
-const express = require("express");
-const app = express();
 const http = require("http");
+const mongodb = require("mongodb");
 
-//1 enter code
-app.use(express.static("public"));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+// MongoDB connection:
+let db;
+const connectionString =
+  "mongodb+srv://bob:Leb5zTbM2aumYE9Y@cluster0.2yprjrq.mongodb.net/Reja";
+mongodb.connect(
+  connectionString,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  },
+  (err, client) => {
+    if (err) console.log("Error on connection MongoDB");
+    else {
+      console.log("MongoDB connection succeed");
+      module.exports = client;
 
-//2 session code
-
-//3 views code
-app.set("views", "views");
-app.set("view engine", "ejs");
-
-//4 Routing code
-app.post("/create-item", (req, res) => {
-  console.log(req.body);
-  res.json({ test: "success" });
-});
-
-app.get("/", function (req, res) {
-  res.render("reja");
-});
-
-const server = http.createServer(app);
-let PORT = 3000;
-
-server.listen(PORT, function () {
-  console.log(
-    `The server is running succesfully on port ${PORT}, http://localhost:${PORT}`
-  );
-});
+      const app = require("./app");
+      const server = http.createServer(app);
+      let PORT = 3000;
+      server.listen(PORT, function () {
+        console.log(
+          ` The server is running succesfully on port ${PORT}, http://localhost:${PORT}`
+        );
+      });
+    }
+  }
+);
