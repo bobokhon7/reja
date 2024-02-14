@@ -7,37 +7,62 @@
 // va 2ta cola mavjud! shop.sotish('non', 3) & shop.qabul('cola', 4) & shop.qoldiq() return hozir 20:50da 1ta non,
 //  5ta lagmon va 6ta cola mavjud!
 
+let now = new Date();
+let hours = now.getHours();
+let minutes = now.getMinutes();
+minutes = minutes < 10 ? "0" + minutes : minutes;
 class Shop {
-  // constructor
   constructor(non, lagmon, cola) {
     this.non = non;
     this.lagmon = lagmon;
     this.cola = cola;
   }
 
-  sotish(non) {
-    this.non -= non;
-  }
-
-  qabul(cola) {
-    this.cola += cola;
-  }
-
   qoldiq() {
-    let now = new Date();
-    let hours = now.getHours();
-    let minutes = now.getMinutes();
-    minutes = minutes < 10 ? "0" + minutes : minutes;
-    console.log(
-      `hozir ${hours}:${minutes} da ${this.non} ta non va ${this.lagmon} ta lagmon va ${this.cola} ta cola mavjud!`
-    );
+    return `hozir${hours}:${minutes} da ${this.non}ta non, ${this.lagmon}ta lagmon va ${this.cola}ta cola mavjud!`;
+  }
+
+  sotish(item, amount) {
+    // non
+    if (item === "non") {
+      if (this.non >= amount) {
+        this.non -= amount;
+      }
+    }
+
+    if (item === "lagmon") {
+      if (this.lagmon >= amount) {
+        this.lagmon -= amount;
+      }
+    }
+    if (item === "cola") {
+      if (this.cola >= amount) {
+        this.cola -= amount;
+      }
+    }
+
+    return `hozir ${hours}:${minutes} da ${this.non}ta non, ${this.lagmon}ta lagmon va ${this.cola}ta cola mavjud!`;
+  }
+
+  qabul(item, amount) {
+    // non
+    if (item === "non") {
+      this.non += amount;
+    }
+
+    if (item === "lagmon") {
+      this.lagmon += amount;
+    }
+
+    if (item === "cola") {
+      this.cola += amount;
+    }
+    return `hozir ${hours}:${minutes} da ${this.non}ta non, ${this.lagmon}ta lagmon va ${this.cola}ta cola mavjud!`;
   }
 }
-const shop = new Shop(4, 5, 2);
-shop.qoldiq();
-shop.sotish(3);
-shop.qabul(4);
-shop.qoldiq();
+
+let savdo = new Shop(6, 5, 2);
+console.log(savdo.qabul("non", 5));
 
 // const animal_List = [
 //   "fox",
