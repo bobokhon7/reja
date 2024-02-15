@@ -1,5 +1,34 @@
 // /*D-TASK:
 
+// Shunday function tuzing, u 2ta string parametr ega bolsin, hamda agar
+// har ikkala string bir hil harflardan iborat bolsa true aks holda false qaytarsin
+// MASALAN checkContent("mitgroup", "gmtiprou") return qiladi true;
+
+// @MITASK
+
+const checkContent = (str1, str2) => {
+  let newArr = str2.split("");
+  let newArr1 = [];
+
+  for (let i = 0; i < newArr.length; i++) {
+    let count = 0;
+    if (str1.length === newArr.length && str1.includes(newArr[i])) {
+      count++;
+    }
+    newArr1.push(count);
+  }
+
+  if (newArr1.includes(0)) {
+    return false;
+  } else {
+    return true;
+  }
+};
+
+console.log(checkContent("mitgroup", "gmtiprou"));
+
+// /*D-TASK:
+
 // Shunday class tuzing tuzing nomi Shop, va uni constructoriga 3 hil mahsulot pass bolsin,
 // hamda classning 3ta methodi bolsin, biri qoldiq, biri sotish va biri qabul. Har bir method
 // ishga tushgan vaqt ham log qilinsin.
@@ -80,21 +109,24 @@
 //   "cow",
 // ];
 
-// const findAnimal = (txt) => {
-//   let newArr = [];
-
-//   for (let i = 0; i < animal_List.length; i++) {
-//     for (let b = 0; b < animal_List[i].length; b++) {
-//       if (animal_List[i][b].includes(txt)) {
-//         newArr.push(animal_List[b]);
+// let matchAnimal = [];
+// function findAnimal(txt) {
+//   for (i = 0; i < animal_List.length; i++) {
+//     let count = 0;
+//     for (b = 0; b < animal_List[b].length; b++) {
+//       if (txt.includes(animal_List[i][b])) {
+//         count++;
 //       }
 //     }
+//     if (count == animal_List[i].length) {
+//       matchAnimal.push(animal_List[i]);
+//     }
 //   }
+//   return matchAnimal;
+// }
+// findAnimal("fdgwoalt");
 
-//   return newArr;
-// };
-
-// console.log(findAnimal("fdgwocalt"));
+// console.log("Answer: ", matchAnimal);
 
 // B-TASK:
 
