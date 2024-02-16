@@ -1,3 +1,15 @@
+// /*E-TASK:
+
+// Shunday function tuzing, u bitta string argumentni
+// qabul qilib osha stringni teskari qilib return qilsin.
+// MASALAN: getReverse("hello") return qilsin "olleh"
+
+const getReverse = (string) => {
+  return string.split("").reverse().join("");
+};
+
+console.log(getReverse("hello"));
+
 // /*D-TASK:
 
 // Shunday function tuzing, u 2ta string parametr ega bolsin, hamda agar
@@ -6,26 +18,26 @@
 
 // @MITASK
 
-const checkContent = (str1, str2) => {
-  let newArr = str2.split("");
-  let newArr1 = [];
+// const checkContent = (str1, str2) => {
+//   let newArr = str2.split("");
+//   let newArr1 = [];
 
-  for (let i = 0; i < newArr.length; i++) {
-    let count = 0;
-    if (str1.length === newArr.length && str1.includes(newArr[i])) {
-      count++;
-    }
-    newArr1.push(count);
-  }
+//   for (let i = 0; i < newArr.length; i++) {
+//     let count = 0;
+//     if (str1.length === newArr.length && str1.includes(newArr[i])) {
+//       count++;
+//     }
+//     newArr1.push(count);
+//   }
 
-  if (newArr1.includes(0)) {
-    return false;
-  } else {
-    return true;
-  }
-};
+//   if (newArr1.includes(0)) {
+//     return false;
+//   } else {
+//     return true;
+//   }
+// };
 
-console.log(checkContent("mitgroup", "gmtiprou"));
+// console.log(checkContent("mitgroup", "gmtiprou"));
 
 // /*D-TASK:
 
