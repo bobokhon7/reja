@@ -18,12 +18,17 @@ app.set("views", "views");
 app.set("view engine", "ejs");
 
 //4 Routing code
+console.log("A2: recieving  data from frontend to backend");
+
 app.post("/create-item", (req, res) => {
+  console.log("A3: requesting data to backend server");
+
   console.log("user entered /create-item");
   console.log(req.body);
   const new_reja = req.body.reja;
   db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
     res.json(data.ops[0]);
+    console.log("A4: sending data to front server");
   });
 });
 

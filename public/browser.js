@@ -26,13 +26,15 @@ function itemTemplate(item) {
 }
 
 let createField = document.getElementById("create-field");
-
+console.log("A1: send data from front to backend");
 document.getElementById("create-form").addEventListener("submit", function (e) {
   e.preventDefault();
 
   axios
     .post("/create-item", { reja: createField.value })
     .then((response) => {
+      console.log("A5: recieving  data from backend to frontend");
+
       document
         .getElementById("item-list")
         .insertAdjacentHTML("beforeend", itemTemplate(response.data));
