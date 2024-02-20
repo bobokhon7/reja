@@ -1,14 +1,36 @@
+// /*F-TASK:
+
+// Shunday findDoublers function tuzing, unga faqat bitta string argument
+// pass bolib, agar stringda bir hil harf qatnashgan bolsa true,
+// qatnashmasa false qaytarishi kerak.
+// MASALAN: getReverse("hello") return true return qiladi
+
+// @MITASK
+
+const getReverse = (str) => {
+  const newArr = str.split("");
+  const newValue = [...new Set(newArr)];
+
+  if (newArr.length !== newValue.length) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+console.log(getReverse("bol"));
+
 // /*E-TASK:
 
 // Shunday function tuzing, u bitta string argumentni
 // qabul qilib osha stringni teskari qilib return qilsin.
 // MASALAN: getReverse("hello") return qilsin "olleh"
 
-const getReverse = (string) => {
-  return string.split("").reverse().join("");
-};
+// const getReverse = (string) => {
+//   return string.split("").reverse().join("");
+// };
 
-console.log(getReverse("hello"));
+// console.log(getReverse("hello"));
 
 // /*D-TASK:
 
