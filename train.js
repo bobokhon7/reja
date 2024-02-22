@@ -1,3 +1,17 @@
+// /*G-TASK:
+
+// Shunday function tuzingki unga integerlardan iborat array pass
+// bolsin va function bizga osha arrayning eng katta qiymatiga
+// tegishli birinchi indexni qaytarsin.
+// MASALAN: getHighestIndex([5, 21, 12, 21, 8]) return qiladi 1 sonini.
+
+const getHighestIndex = (num) => {
+  let getHigestNum = Math.max(...num);
+  return num.indexOf(getHigestNum);
+};
+
+console.log(getHighestIndex([5, 21, 12, 21, 8]));
+
 // /*F-TASK:
 
 // Shunday findDoublers function tuzing, unga faqat bitta string argument
@@ -7,18 +21,18 @@
 
 // @MITASK
 
-const getReverse = (str) => {
-  const newArr = str.split("");
-  const newValue = [...new Set(newArr)];
+// const getReverse = (str) => {
+//   const newArr = str.split("");
+//   const newValue = [...new Set(newArr)];
 
-  if (newArr.length !== newValue.length) {
-    return true;
-  } else {
-    return false;
-  }
-};
+//   if (newArr.length !== newValue.length) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// };
 
-console.log(getReverse("bol"));
+// console.log(getReverse("bol"));
 
 // /*E-TASK:
 
